@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🧠 Xhaka Platform — Quick Links</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-base: #0a0a0f;
+      --bg-surface: #111118;
+      --bg-elevated: #1a1a26;
+      --bg-border: #2a2a3d;
+      --text-primary: #f0f0ff;
+      --text-secondary: #8888aa;
+      --accent-primary: #7c6aff;
+      --accent-glow: rgba(124, 106, 255, 0.25);
+      --status-active: #00d68f;
+      --font-ui: 'Inter', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-ui);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 24px 64px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.03em;
+    }
+
+    .pulse-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--status-active);
+      margin-right: 8px;
+      animation: pulse 2s infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--bg-border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      background: radial-gradient(circle at 50% 0%, var(--accent-glow), transparent 70%);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--accent-primary);
+      border-color: var(--accent-primary);
+    }
+
+    .card:hover::before { opacity: 1; }
+
+    .card-icon {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      flex: 1;
+      line-height: 1.5;
+    }
+
+    .card-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 4px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--bg-border);
+      color: var(--accent-primary);
+      font-size: 0.85rem;
+      font-weight: 500;
+      font-family: var(--font-ui);
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease;
+      align-self: flex-start;
+    }
+
+    .card:hover .card-btn {
+      background: var(--accent-primary);
+      color: #fff;
+      border-color: var(--accent-primary);
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      text-align: center;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🧠 Xhaka Platform — Quick Links</h1>
+    <p><span class="pulse-dot"></span>New Again Houses AI Operating System</p>
+  </div>
+
+  <div class="grid">
+    <a class="card" href="https://xhaka-production.up.railway.app/control-room" target="_blank" rel="noopener">
+      <div class="card-icon">🎛️</div>
+      <div class="card-title">Control Room</div>
+      <div class="card-desc">Live agent status, jobs, memory health</div>
+      <button class="card-btn">→ Open</button>
+    </a>
+
+    <a class="card" href="https://xhaka-production.up.railway.app" target="_blank" rel="noopener">
+      <div class="card-icon">🏠</div>
+      <div class="card-title">Dashboard</div>
+      <div class="card-desc">Xhaka landing page</div>
+      <button class="card-btn">→ Open</button>
+    </a>
+
+    <a class="card" href="https://xhaka-production.up.railway.app/health" target="_blank" rel="noopener">
+      <div class="card-icon">📊</div>
+      <div class="card-title">API Health</div>
+      <div class="card-desc">System health JSON</div>
+      <button class="card-btn">→ Open</button>
+    </a>
+
+    <a class="card" href="https://github.com/c7lavinder/xhaka" target="_blank" rel="noopener">
+      <div class="card-icon">💻</div>
+      <div class="card-title">GitHub — Xhaka</div>
+      <div class="card-desc">Intelligence pipeline source</div>
+      <button class="card-btn">→ Open</button>
+    </a>
+
+    <a class="card" href="https://github.com/c7lavinder/Gunner" target="_blank" rel="noopener">
+      <div class="card-icon">💻</div>
+      <div class="card-title">GitHub — Gunner</div>
+      <div class="card-desc">Gunner platform source</div>
+      <button class="card-btn">→ Open</button>
+    </a>
+
+    <a class="card" href="https://railway.app/project/84c0d035-cf53-4edd-b29c-31aeb42caac9" target="_blank" rel="noopener">
+      <div class="card-icon">🚂</div>
+      <div class="card-title">Railway Project</div>
+      <div class="card-desc">Deployment canvas</div>
+      <button class="card-btn">→ Open</button>
+    </a>
+
+    <a class="card" href="https://gunner-app-production.up.railway.app" target="_blank" rel="noopener">
+      <div class="card-icon">🔫</div>
+      <div class="card-title">Gunner App</div>
+      <div class="card-desc">Live Gunner platform</div>
+      <button class="card-btn">→ Open</button>
+    </a>
+  </div>
+
+  <footer>Built by Corey Lavinder &amp; Xhaka · New Again Houses</footer>
+</body>
+</html>
